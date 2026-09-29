@@ -1,0 +1,10 @@
+## Interface: 160001
+## Title: BagFree
+## Notes: Displays free bag and reagent bag slots
+## Version: 1.0
+## Author: Kaegan
+## SavedVariables: BagFreeDB
+## IconTexture: Interface\Icons\INV_Misc_Bag_08
+
+BagFree.lua
+Options.lua
