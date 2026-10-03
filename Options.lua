@@ -49,6 +49,7 @@ local MODE_OPTIONS = {
 --------------------------------------------------
 local panel = CreateFrame("Frame", "BagFreeOptionsPanel")
 local positionMenu, modeMenu, fontSizeMenu
+local categoryID
 local updating = false
 
 --------------------------------------------------
@@ -112,6 +113,15 @@ local function ResetDefaults()
     BagFree.Refresh()
 end
 
+local function OpenOptions()
+    if Settings and Settings.OpenToCategory and categoryID then
+        Settings.OpenToCategory(categoryID)
+    else
+        InterfaceOptionsFrame_OpenToCategory(panel)
+        InterfaceOptionsFrame_OpenToCategory(panel)
+    end
+end
+
 --------------------------------------------------
 -- 4. Initialization
 --------------------------------------------------
@@ -145,6 +155,11 @@ panel:SetScript("OnShow", RefreshControls)
 if Settings and Settings.RegisterCanvasLayoutCategory then
     local category = Settings.RegisterCanvasLayoutCategory(panel, "BagFree")
     Settings.RegisterAddOnCategory(category)
+    categoryID = category:GetID()
 else
     InterfaceOptions_AddCategory(panel)
 end
+
+-- Register slash command
+SLASH_BAGFREE1 = "/bagfree"
+SlashCmdList["BAGFREE"] = OpenOptions
