@@ -121,7 +121,7 @@ local function LoadSettings()
     if type(BagFreeDB.fontSize) ~= "number" then
         BagFreeDB.fontSize = defaults.fontSize
     end
-    BagFreeDB.fontSize = math.floor(math.max(8, math.min(24, BagFreeDB.fontSize)))
+    BagFreeDB.fontSize = math.floor(math.max(10, math.min(24, BagFreeDB.fontSize)))
     if BagFreeDB.displayMode ~= "SEPARATE" and
        BagFreeDB.displayMode ~= "HIDE" and
        BagFreeDB.displayMode ~= "COMBINED" then
