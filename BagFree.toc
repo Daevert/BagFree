@@ -1,7 +1,7 @@
 ## Interface: 16001
 ## Title: BagFree
 ## Notes: Displays free bag and reagent bag slots
-## Version: 1.0.1
+## Version: 1.1
 ## Author: Kaegan
 ## SavedVariables: BagFreeDB
 ## IconTexture: Interface\Icons\INV_Misc_Bag_08
