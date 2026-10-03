@@ -9,6 +9,10 @@ local addonName, BagFree = ...
 --------------------------------------------------
 local FONT_PATH = "Fonts\\FRIZQT__.TTF"
 local FIRST_BAG, LAST_BAG, REAGENT_BAG = 0, 4, 5
+local QUIVER_FAMILY = 1
+local AMMO_POUCH_FAMILY = 2
+local SOUL_BAG_FAMILY = 4
+
 local POSITIONS = {
     CENTER = { "CENTER", "CENTER", 0, 0 },
     TOPLEFT = { "TOPLEFT", "TOPLEFT", 3, -3 },
@@ -36,6 +40,7 @@ local reagentButton = CharacterReagentBag0Slot
 local defaultCounter = MainMenuBarBackpackButtonCount
 local bagText, reagentText
 local regularFree, reagentFree = 0, 0
+
 
 --------------------------------------------------
 -- 3. Functions
@@ -92,10 +97,13 @@ local function UpdateFreeSlots()
     for bag = FIRST_BAG, LAST_BAG do
         local free, bagFamily = C_Container.GetContainerNumFreeSlots(bag)
         free, bagFamily = free or 0, bagFamily or 0
-        if bagFamily ~= 0 then
-            reagentFree = reagentFree + free
-        else
+        if bagFamily == 0 then
             regularFree = regularFree + free
+        elseif bagFamily ~= QUIVER_FAMILY
+            and bagFamily ~= AMMO_POUCH_FAMILY
+            and bagFamily ~= SOUL_BAG_FAMILY then
+
+            reagentFree = reagentFree + free
         end
     end
 
@@ -113,7 +121,7 @@ local function LoadSettings()
     if type(BagFreeDB.fontSize) ~= "number" then
         BagFreeDB.fontSize = defaults.fontSize
     end
-    BagFreeDB.fontSize = math.floor(math.max(8, math.min(24, BagFreeDB.fontSize)))
+    BagFreeDB.fontSize = math.floor(math.max(10, math.min(24, BagFreeDB.fontSize)))
     if BagFreeDB.displayMode ~= "SEPARATE" and
        BagFreeDB.displayMode ~= "HIDE" and
        BagFreeDB.displayMode ~= "COMBINED" then

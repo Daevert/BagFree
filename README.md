@@ -1,27 +1,60 @@
-# BagFree – Simple, Customizable Bag Slot Counter
+# BagFree
 
-BagFree is a lightweight addon for World of Warcraft: Forever that displays your available inventory space directly on your bag bar.
+BagFree is a lightweight addon for **World of Warcraft: Forever** that
+displays your available inventory space directly on the bag bar.
 
-Keep track of your free bag slots at a glance without opening your inventory. BagFree supports both regular and reagent bags, with customizable counters that blend into the game's interface.
+It provides an at-a-glance view of free regular and reagent bag slots
+without requiring you to open your bags.
 
 ## Features
 
-*   Free slot counters: Display the number of available inventory slots directly on your bag icons.
-*   Reagent bag support: Automatically count free slots across multiple reagent bags, regardless of which bag slots they occupy.
-*   Customizable positioning: Choose from nine different positions for your counters.
-*   Three display modes:  
-    *   Separate counters for regular and reagent bags.
-    *   Display only regular free slots.
-    *   Combine regular and reagent free slots into a single counter.
+-   Displays free inventory slots directly on the bag bar
+-   Supports regular and reagent bag slots
+-   Supports separate, hidden, or combined reagent slot counts
+-   Nine counter positions
+-   Adjustable font size from 10 to 24
+-   Updates automatically when your inventory changes
+-   Uses the built-in WoW AddOns settings panel
+-   Saves your settings between sessions
+-   No external addon dependencies
 
-## Getting Started
+## Configuration
 
-Install BagFree, enable it, and you're ready to go. The addon works immediately with its default settings.
+Open **Options → AddOns → BagFree** to configure the addon, or type:
 
-To customize your counters, navigate to Options → AddOns → BagFree.
+`/bagfree`
+
+Available settings:
+
+-   **Counter position** --- choose where the counter appears on the bag
+    icon
+-   **Font size** --- choose a size from 10 to 24
+-   **Reagent slot display**
+    -   **Separate** --- show regular and reagent free slots separately
+    -   **Hide** --- show only regular free slots
+    -   **Combined** --- combine regular and reagent free slots into one
+        counter
+
+## Installation
+
+### CurseForge
+
+Install BagFree from the CurseForge app or from the BagFree project
+page.
+
+### Manual installation
+
+1.  Download BagFree.
+2.  Extract the `BagFree` folder into your World of Warcraft
+    `Interface/AddOns` folder.
+3.  Start or restart World of Warcraft.
+4.  Make sure BagFree is enabled in the AddOns menu.
 
 ## Compatibility
 
-Designed for World of Warcraft: Forever.
+BagFree is designed for **World of Warcraft: Forever**.
 
-BagFree is a small, standalone addon with no additional addon dependencies.
+## License
+
+BagFree is licensed under the **GNU General Public License v3.0
+(GPL-3.0-only)**. See the `LICENSE` file for details.
